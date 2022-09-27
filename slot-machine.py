@@ -127,6 +127,17 @@ def finalResult(linesAmount, balance, data):
     return balance;
 
 
+def printSlots(slots):
+    for i in range(len(slots)):
+        for j in range(len(slots[0])):            
+            if j != len(slots) - 1:
+                print(slots[i][j], end=" | ")
+            else:
+                print(slots[i][j], end="")
+
+        print()
+
+
 # Beginning of the program:
 balance=takeDeposit()
 while True:
@@ -134,5 +145,6 @@ while True:
     linesAmount=takeLines(balance)
     fill_slots(slots)
     data=checkIfEqual(slots);
-    print(slots);
+    printSlots(slots);
+    # print(slots)
     balance=finalResult(linesAmount, balance, data)
